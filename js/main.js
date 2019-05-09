@@ -1,8 +1,8 @@
 // The product shown on the page based on the form values
-function Product(array) {
-  this.title = array[0];
-  this.add = array[1];
-  this.description = array[2];
+function Product(formData) {
+  this.title = formData.get("title");
+  this.add = formData.get("add");
+  this.description = formData.get("description");
 }
 
 
@@ -41,13 +41,8 @@ var formManager = {
 
 // Function to get all the form values, create a product object based on it and add it to the DOM
   getForm : function() {
-    var input = document.getElementsByClassName("form-control");
-    var value = [];
-    for (var i = 0; i < input.length; i++) {
-        value.push(input[i].value);
-        input[i].value="";
-    }
-    var currentProduct = new Product(value);
+    var formData = new FormData(document.querySelector('form'));
+    var currentProduct = new Product(formData);
     this.addContent(currentProduct);
   }
 };
