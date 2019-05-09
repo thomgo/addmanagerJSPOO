@@ -3,43 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title>Add Manager JS</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
 
-    <div class="jumbotron bg-primary text-white">
-      <h1 class="display-3">Manage your adds here</h1>
-      <p class="lead">You can simply manage the adds you want to show here, just add it in the form and they will appear</p>
+    <div class="jumbotron bg-dark text-light">
+      <h1 class="display-3">Gérez vos annonces en un ;)</h1>
+      <p class="lead">Des annonces chargées sans rechargement de page ? Remplissez simplement le formulaire à disposition.</p>
     </div>
 
-    <section class="container">
-      <h2>Adds management</h2>
+    <section class="container mb-5">
+      <h2>Votre annonce</h2>
       <div class="row">
         <div class="col-12 col-md-3">
-            <div class="form-group">
-              <label for="Title">Titre</label>
-              <input class="form-control" type="text" id="Title">
+          <form action="" method="post" enctype="multipart/form-data" id="productForm">
+            <div >
+              <div class="form-group">
+                <label for="Title">Titre</label>
+                <input class="form-control" name="title" type="text" id="Title">
+              </div>
+              <div class="form-group">
+                <label for="Add">Accroche</label>
+                <input class="form-control" name="add" type="text" id="Add">
+              </div>
+              <div class="form-group">
+                <label for="Description">Description du produit</label>
+                <textarea class="form-control" name="description" id="Description" rows="3"></textarea>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="Add">Accroche</label>
-              <input class="form-control" type="text" id="Add">
-            </div>
-            <div class="form-group">
-              <label for="Description">Description du produit</label>
-              <textarea class="form-control" id="Description" rows="3"></textarea>
-            </div>
-            <button class="btn btn-primary" id="send" onclick="formManager.getForm()">Envoyer</button>
-
+          </form>
+          <div class="text-center">
+            <button class="btn btn-success" id="send" onclick="formManager.getForm()">Envoyer</button>
+          </div>
         </div>
         <div class="col-12 col-md-9" id="AddContainer">
         </div>
       </div>
     </section>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
