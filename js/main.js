@@ -43,11 +43,15 @@ var formManager = {
 
 // Function to get all the form values, create a product object based on it and add it to the DOM
   getForm : function() {
+    //Get the form from the html page
+    form = document.getElementById("productForm");
     //Create the formData object to get the value from the html form
-    var formData = new FormData(document.querySelector('form'));
+    var formData = new FormData(form);
     //Create new Product object hydrated with the form values
     var product = new Product(formData);
     //Add a card with the object's values on the page
     this.addContent(product);
+    //Clear the form values
+    form.reset();
   }
 };
